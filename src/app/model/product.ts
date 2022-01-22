@@ -6,12 +6,15 @@ export class Product {
   description: string = "";
   image: string = "";
   price: number = 0;
-  stock: number = 0;
-  featured: string = "";
-  active: boolean = true;
+  stock: boolean = true;
+  featured: boolean = true;
+  players: string = "";
+  playingtime: string = "";
+  age: string = "";
+  weight: string = "";
 
   constructor(id: number, catId: number, name: string, description: string,
-    image: string, price: number, stock: number, featured: string, active: boolean) {
+    image: string, price: number, stock: boolean, featured: boolean, players: string, playingtime: string, age: string, weight: string) {
     this.id = id;
     this.catId = catId;
     this.name = name;
@@ -20,6 +23,9 @@ export class Product {
     this.price = price;
     this.stock = stock;
     this.featured = featured;
-    this.active = active
+    this.players = players;
+    this.playingtime = playingtime;
+    this.age = age;
+    this.weight = weight;
   }
 }
