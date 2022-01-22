@@ -8,7 +8,8 @@ import { Product } from '../../model/product';
 })
 export class ProductCardComponent implements OnInit {
 
-  @Input() productList: Product[];
+  @Input()
+  productList: Product[] = [];
 
   constructor() { }
 
