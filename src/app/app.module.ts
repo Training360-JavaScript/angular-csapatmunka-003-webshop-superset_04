@@ -26,9 +26,9 @@ import { FilterPipe } from './pipe/filter.pipe';
     Cat02Component,
     HomeComponent,
 
-    ProductCardComponent
+    ProductCardComponent,
 
-    TextSlicerPipe
+    TextSlicerPipe,
 
     ProductPagerComponent,
     ProductListComponent,
