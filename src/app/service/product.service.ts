@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { of, Observable } from 'rxjs';
 import { Product } from '../model/product';
 
 @Injectable({
@@ -762,5 +763,13 @@ export class ProductService {
 
   getAll(): Product[] {
     return this.list;
+  }
+
+  getProductsByCatID(catID: number): Observable<Product[]> {
+    return of(
+      this.list.filter((product) => {
+        return product.catId === catID;
+      })
+    );
   }
 }
