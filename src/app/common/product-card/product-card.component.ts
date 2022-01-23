@@ -4,17 +4,12 @@ import { Product } from '../../model/product';
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.scss']
+  styleUrls: ['./product-card.component.scss'],
 })
 export class ProductCardComponent implements OnInit {
+  @Input() product: Product | null = null;
 
+  constructor() {}
 
-  @Input()  product: Product = new Product();
-  constructor() {
-    
-  }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
