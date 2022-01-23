@@ -1,3 +1,4 @@
+import { CategoryService } from './category.service';
 import { Injectable } from '@angular/core';
 
 export interface IMenuItem {
@@ -7,17 +8,19 @@ export interface IMenuItem {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ConfigService {
-
   appName: string = 'Sample Webshop';
 
-  menuItems: IMenuItem[] = [
-    {text: 'Home', link: '/', icon: 'home'},
-    {text: 'Category01', link: '/cat01'},
-    {text: 'Category02', link: '/cat02'},
-  ];
+  menuItems: IMenuItem[] = [{ text: 'Home', link: '/', icon: 'home' }];
 
-  constructor() { }
+  constructor(private categoryService: CategoryService) {
+    this.categoryService.getCategories().forEach((category) => {
+      this.menuItems.push({
+        text: category.name,
+        link: `/${category.name}`,
+      });
+    });
+  }
 }
