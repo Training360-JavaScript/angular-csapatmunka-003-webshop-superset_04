@@ -8,7 +8,7 @@ import { Product } from 'model/product';
 })
 export class ProductListComponent implements OnInit {
 
-  @Input() productList: Product[];
+  @Input() productList: Product[] = [];
 
   search: string = '';
 
