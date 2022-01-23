@@ -15,6 +15,7 @@ import { TextSlicerPipe } from './pipe/text-slicer.pipe';
 import { ProductPagerComponent } from './common/product-pager/product-pager.component';
 import { ProductListComponent } from './common/product-list/product-list.component';
 import { FilterPipe } from './pipe/filter.pipe';
+import { SorterPipe } from './pipe/sorter.pipe';
 
 
 
@@ -32,7 +33,8 @@ import { FilterPipe } from './pipe/filter.pipe';
 
     ProductPagerComponent,
     ProductListComponent,
-    FilterPipe
+    FilterPipe,
+    SorterPipe
 
   ],
   imports: [
