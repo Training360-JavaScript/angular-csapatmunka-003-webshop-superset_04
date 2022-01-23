@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Product } from 'model/product';
+import { Product } from 'src/app/model/product';
 
 @Component({
   selector: 'app-product-pager',
@@ -8,7 +8,7 @@ import { Product } from 'model/product';
 })
 export class ProductPagerComponent implements OnInit {
 
-  @Input() productList: Product[]
+  @Input() productList: Product[] = [];
 
   constructor() { }
 
