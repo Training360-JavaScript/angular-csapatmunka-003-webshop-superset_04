@@ -13,7 +13,10 @@ export class Product {
   age: string = "";
   weight: string = "";
 
-  constructor(id: number, catId: number, name: string, description: string,
+
+  constructor() {}
+
+  /* constructor(id: number, catId: number, name: string, description: string,
     image: string, price: number, stock: boolean, featured: boolean, players: string, playingtime: string, age: string, weight: string) {
     this.id = id;
     this.catId = catId;
@@ -28,4 +31,7 @@ export class Product {
     this.age = age;
     this.weight = weight;
   }
+
+  */
 }
+
