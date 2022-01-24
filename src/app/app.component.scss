@@ -1,5 +1,12 @@
+.cont {
+  background-color: #525252;
+}
+
 .bg{
   background-image: url("../assets/image/dice.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
+  max-width: 1700px;
+  margin: 0 auto;
 }
