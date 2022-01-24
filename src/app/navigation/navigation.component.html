@@ -1,7 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-  <a class="navbar-brand text-dark" routerLink="/">{{ appName }}</a>
+<nav class="navbar navbar-expand-lg sticky-top menu">
+  <a class="menu__brand" routerLink="/">
+    {{ appName }}
+  </a>
   <button
-    class="navbar-toggler"
+    class="navbar-toggler menu__btn"
     type="button"
     data-toggle="collapse"
     data-target="#navbarSupportedContent"
@@ -9,18 +11,20 @@
     aria-expanded="false"
     aria-label="Toggle navigation"
   >
-    <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon">
+      <i class="fa-bars"></i>
+    </span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav">
       <li
         *ngFor="let item of menuItems"
-        class="nav-item"
+        class="nav-item  menu__link ml-5"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
       >
-        <a class="nav-link" [routerLink]="item.link">{{ item.text }}</a>
+        <a class="nav-link menu__link" [routerLink]="item.link">{{ item.text }}</a>
       </li>
     </ul>
   </div>
