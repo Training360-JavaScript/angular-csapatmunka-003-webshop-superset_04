@@ -18,6 +18,7 @@ import { ProductListComponent } from './common/product-list/product-list.compone
 import { FilterPipe } from './pipe/filter.pipe';
 import { SorterPipe } from './pipe/sorter.pipe';
 import { FeaturedPipe } from './pipe/featured.pipe';
+import { CardsCarouselComponent } from './common/cards-carousel/cards-carousel.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FeaturedPipe } from './pipe/featured.pipe';
     FilterPipe,
     SorterPipe,
     FeaturedPipe,
+    CardsCarouselComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
