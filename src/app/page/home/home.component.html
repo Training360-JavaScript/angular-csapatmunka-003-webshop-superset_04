@@ -1,7 +1,7 @@
-<section class="bg-dark py-5">
-  <div class="container-fluid">
-    <h2 class="mb-3 text-center text-white text-md-left">Featured Products:</h2>
-    <div class="row justify-content-center d-none d-md-flex">
+<section class="py-5">
+  <div class="mx-auto container-fluid">
+    <h2 class="mb-3 products">Kiemelt termékek</h2>
+    <div class="row justify-content-center">
       <div
         class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl mb-3"
         *ngFor="let product of featuredProducts"
@@ -15,10 +15,10 @@
     [carouselId]="'carousel1'"
   ></app-cards-carousel>
 </section>
-<section class="bg-secondary py-5">
+<section class="py-5">
   <div class="container-fluid">
-    <h2 class="mb-3 text-center text-white text-md-left">On Sale:</h2>
-    <div class="row justify-content-center d-none d-md-flex">
+    <h2 class="mb-3 products">Akciós termékek</h2>
+    <div class="row justify-content-center">
       <div
         class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl mb-3"
         *ngFor="let product of randomProducts"
