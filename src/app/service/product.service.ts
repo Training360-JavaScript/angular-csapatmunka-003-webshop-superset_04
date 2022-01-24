@@ -772,4 +772,16 @@ export class ProductService {
       })
     );
   }
+
+  getProductById(id: number): Observable<Product> {
+    let product = new Product();
+    for (let prod of this.list) {
+      console.log(prod.id, id);
+      if (prod.id === id) {
+        product = prod;
+        break;
+      }
+    }
+    return of(product);
+  }
 }
