@@ -1,0 +1,35 @@
+@import "../../assets/scss/variables";
+
+.menu{
+  background-color: $nav__bg-color;
+  box-shadow: 2px 2px 15px black;
+
+  &__brand{
+    font-family: $logo__font;
+    font-size: $font-lg;
+    color: $nav__hover-font-color;
+    text-shadow: 1px 1px 1px black, 1px 1px 15px white;
+    text-decoration: none;
+    margin-left:20px;
+
+    &:hover{
+      text-decoration: none;
+      color: $nav__font-color;
+    }
+  }
+
+  &__link{
+    font-family: $menu__font;
+    color: $nav__font-color;
+    font-size: $font-md;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px black, 1px 1px 15px white;
+    padding-left: 15px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover{
+      text-decoration: none;
+      color: $nav__hover-font-color;
+    }
+  }
+}

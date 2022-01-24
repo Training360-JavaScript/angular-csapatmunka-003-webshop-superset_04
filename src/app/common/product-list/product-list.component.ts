@@ -1,3 +1,4 @@
+import { filter } from 'rxjs';
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../../model/product';
 

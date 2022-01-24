@@ -1,1 +1,15 @@
 
+@import "../../../assets/scss/variables";
+
+.products{
+  font-family: $menu__font;
+  font-weight: bolder;
+  font-size: $font-xlg;
+  color: $products-group_font-color;
+  text-shadow: 1px 1px 1px black, 1px 1px 15px black;
+  text-align: center;
+  padding-bottom: 30px;
+
+}
+
+

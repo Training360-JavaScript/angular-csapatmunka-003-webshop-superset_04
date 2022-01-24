@@ -1,0 +1,102 @@
+@import "../../../assets/scss/variables";
+
+.card-product{
+  margin: 0;
+  background-color: $card__bg-color;
+  border-radius: 20px;
+  box-shadow: 0 2px 20px $card__shadow-color;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+
+
+  &__img-container{
+    width: 100%;
+    background-color: white;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    margin: 15px auto;
+    justify-content: center;
+  }
+
+  &__img{
+    max-width: 80%;
+    max-height: 180px;
+    margin: 10%;
+    border-radius: 10px;
+    object-fit: contain;
+  }
+
+  &__body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: space-evenly;
+    padding: 10px;
+    margin: 10px;
+    height: 60%;
+  }
+
+  &__title{
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+  }
+
+  &__descript{
+    text-align: justify;
+    font-size: $font-sm;
+  }
+
+  &__infos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px 5px;
+  }
+
+  &__info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & i{
+      font-size: $font-lg;
+    }
+  }
+
+  &__price{
+    width: 100%;
+    text-align: center;
+    font-family: $menu__font;
+    font-size: $font-md;
+    padding-top: 10px;
+  }
+
+  &__btn{
+    font-size: $font-md;
+    font-weight: bolder;
+    background-color: $btn__bg-color;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    color: $btn__bg-font;
+    opacity: .8;
+    transition: all 0.2s ease-in-out;
+
+    & i{
+      font-size: $font-lg;
+    }
+
+    &:hover{
+      opacity: 1;
+      background-color: $btn__hover-font-color;
+    }
+  }
+
+  &:hover{
+    box-shadow: 0 2px 20px $card__shadow-color, 0 4px 40px $card__shadow-color;
+  }
+}
