@@ -1,0 +1,35 @@
+<div class="container py-5">
+  <div class="card mb-3">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <h5 class="card-title">{{ (product$ | async)?.name }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">
+            {{ (product$ | async)?.description }}
+          </h6>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              {{ (product$ | async)?.price | currency: "HUF" }}
+            </li>
+            <li class="list-group-item">
+              {{ (product$ | async)?.playingtime }}
+            </li>
+            <li class="list-group-item">
+              {{ (product$ | async)?.age }}
+            </li>
+            <li class="list-group-item">
+              {{ (product$ | async)?.players }}
+            </li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6">
+          <img
+            class="img-fluid"
+            [src]="(product$ | async)?.image"
+            [alt]="(product$ | async)?.name"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
