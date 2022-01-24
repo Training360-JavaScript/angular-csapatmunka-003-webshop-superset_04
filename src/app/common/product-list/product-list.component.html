@@ -1,7 +1,8 @@
 <div class="col-3 form-group">
-  <label for="search" class="form-control">Termék keresése:</label>
+  <label for="search" class="form-control search-label">Termék keresése:</label>
 
-  <input [(ngModel)]="search" id="search" type="text" class="form-control" placeholder="Írja be a keresett terméket" />
+  <input [(ngModel)]="search" id="search" type="text" class="form-control search-label"
+    placeholder="Írja be a keresett terméket" />
 </div>
 <div class="row">
   <div class="col-12 col-md-6 col-lg-five mb-3" *ngFor="let product of productList | filter: search">
