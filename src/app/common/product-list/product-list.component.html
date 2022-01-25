@@ -3,9 +3,19 @@
 
   <input [(ngModel)]="search" id="search" type="text" class="form-control search-label"
     placeholder="Írja be a keresett terméket" />
+
+  <select class="my-3 form-control" [(ngModel)]="selected" name="valueCheck"
+    (change)="valueChange($event)">
+    <option [ngValue]="undefined" disabled>Rendezési szempont</option>
+    <option *ngFor="let key of sortList"
+      [value]="key.category" [selected]="key.category == selected">
+        {{ key.name }}
+    </option>
+  </select>
 </div>
+
 <div class="row">
-  <div class="col-12 col-md-6 col-lg-five mb-3" *ngFor="let product of productList | filter: search">
+  <div class="col-12 col-md-6 col-lg-five mb-3" *ngFor="let product of productList | filter: search | sorter: sorterKey">
     <app-product-card [product]="product"></app-product-card>
   </div>
 </div>

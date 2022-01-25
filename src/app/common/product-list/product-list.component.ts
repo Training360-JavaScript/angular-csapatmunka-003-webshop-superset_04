@@ -1,4 +1,5 @@
-import { filter } from 'rxjs';
+import { SortCategory } from './../../model/sort-category';
+import { SorterService } from './../../service/sorter.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from '../../model/product';
 
@@ -12,7 +13,18 @@ export class ProductListComponent implements OnInit {
 
   search: string = '';
 
-  constructor() {}
+  selected: string = "";
+  sorterKey: string ="";
+
+  sortList: SortCategory[] = this.sorterService.sortList;
+
+  constructor(
+    private sorterService: SorterService,
+  ) {}
+
+  valueChange(event: any) {
+    this.sorterKey=String(this.selected);
+  }
 
   ngOnInit(): void {}
 }
