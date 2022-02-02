@@ -10,10 +10,8 @@ import { ProductService } from 'src/app/service/product.service';
   styleUrls: ['./product-page.component.scss'],
 })
 export class ProductPageComponent implements OnInit {
-  product$: Observable<Product> = this.activatedRoute.params.pipe(
-    switchMap((params) =>
-      this.productService.getProductById(Number(params['prodId']))
-    )
+  product$: Observable<Product[]> = this.activatedRoute.params.pipe(
+    switchMap((params) => this.productService.getProductById(params['prodId']))
   );
 
   constructor(
@@ -21,5 +19,7 @@ export class ProductPageComponent implements OnInit {
     private productService: ProductService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.product$.subscribe((product) => console.log(product));
+  }
 }
