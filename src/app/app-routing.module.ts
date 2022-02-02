@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { Cat01Component } from './page/cat01/cat01.component';
 import { HomeComponent } from './page/home/home.component';
+import { AdminComponent } from './page/admin/admin.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: 'products/:prodId',
     component: ProductPageComponent,
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
   },
   {
     path: ':catName',
@@ -27,4 +32,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
