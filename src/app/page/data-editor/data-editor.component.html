@@ -1,5 +1,6 @@
 <ng-container *ngIf="list">
   <div class="container-fluid">
+    {{keys}}
     <table class="table table-responsive table-striped mt-5">
       <thead>
         <tr>
@@ -17,30 +18,23 @@
           <th>Weight</th>
         </tr>
       </thead>
-      <tr *ngFor="let list of list">
-        <td>{{ list.id }}</td>
-        <td>{{ list.catId }}</td>
-        <td>{{ list.name }}</td>
-        <td>{{ list.description }}</td>
-        <td>{{ list.image }}</td>
-        <td>{{ list.price }}</td>
-        <td>{{ list.stock }}</td>
-        <td>{{ list.featured }}</td>
-        <td>{{ list.players }}</td>
-        <td>{{ list.playingtime }}</td>
-        <td>{{ list.age }}</td>
-        <td>{{ list.weight }}</td>
-        <td class="btn-group">
-          <button class="btn btn-info"><i class="fa fa-pencil"></i></button>
-          <button class="btn btn-danger">
-            <i class="fa fa-trash"></i>
-          </button>
-          <button class="btn btn-success">
-            <i class="fa fa-save"></i>
-          </button>
-        </td>
-      </tr>
-      <tbody></tbody>
+      <tbody>
+        <tr *ngFor="let list of list">
+
+          <td *ngFor="let key of keys">
+            <input [name]="key" [disabled]="key==='id'" [(ngModel)]="list[key]" type="text" class="form-control">
+          </td>
+          <td class="btn-group">
+            <button class="btn btn-info" (click)="editItem(list)"><i class="fa fa-save"></i></button>
+            <button class="btn btn-danger" (click)="deleteItem(list)">
+              <i class="fa fa-trash"></i>
+            </button>
+            <button class="btn btn-success" (click)="undo()">
+              <i class="fa fa-undo"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </ng-container>

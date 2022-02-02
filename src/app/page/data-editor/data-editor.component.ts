@@ -1,5 +1,7 @@
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Product } from './../../model/product';
 import { Component, Input, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-data-editor',
@@ -9,7 +11,28 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DataEditorComponent implements OnInit {
   @Input() list!: Product[];
 
-  constructor() {}
+  keys!: string[];
 
-  ngOnInit(): void {}
+  constructor( private productService: ProductService) {}
+
+  ngOnInit(): void {
+    this.keys = Object.keys(new Product());
+  }
+
+  editItem(product: Product) {
+    this.productService.update(product).subscribe()
+  }
+
+  deleteItem(product: Product) {
+    if(confirm("Biztos, hogy törli a terméket?")) {
+
+      this.productService.remove(product).subscribe()
+    }
+  }
+
+  undo() {
+    this.productService.getAll().subscribe(
+      list => this.list = list
+    )
+  }
 }
