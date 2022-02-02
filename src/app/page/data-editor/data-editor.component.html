@@ -1,4 +1,4 @@
-<ng-container>
+<ng-container *ngIf="list">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -19,7 +19,7 @@
               <th>Weight</th>
             </tr>
           </thead>
-          <tr>
+          <tr *ngFor="let list of list">
             <td>{{ list.id }}</td>
             <td>{{ list.catId }}</td>
             <td>{{ list.name }}</td>
