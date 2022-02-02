@@ -1,3 +1,9 @@
 <div *ngIf="list$ | async as list">
   <app-data-editor [list]="list"></app-data-editor>
+
+
+<td *ngFor="let key of keys">
+  <input [name]="key" [disabled]="key==='id'" [(ngModel)]="list[key]" type="text" class="form-control">
+</td>
+
 </div>
