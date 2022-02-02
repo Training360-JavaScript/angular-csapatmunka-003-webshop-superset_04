@@ -26,4 +26,13 @@ export class ProductService {
   getProductById(id: number): Observable<Product> {
     return this.http.get<Product>(`${this.url}?id=${id}`);
   }
+
+  update(product: Product): Observable<any> {
+    return this.http.put( `${environment.jsonApiUrl}/${this.jsonName}/${product.id}`, product )
+  }
+
+  remove(product: any): Observable<any> {
+    product = product.id ? product : product;
+    return this.http.delete( `${environment.jsonApiUrl}/${this.jsonName}/${product}` );
+  }
 }
