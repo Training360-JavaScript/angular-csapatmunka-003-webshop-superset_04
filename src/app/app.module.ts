@@ -22,6 +22,7 @@ import { CardsCarouselComponent } from './common/cards-carousel/cards-carousel.c
 import { ProductPageComponent } from './page/product-page/product-page.component';
 import { AdminComponent } from './page/admin/admin.component';
 import { DataEditorComponent } from './page/data-editor/data-editor.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { DataEditorComponent } from './page/data-editor/data-editor.component';
     AdminComponent,
     DataEditorComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
