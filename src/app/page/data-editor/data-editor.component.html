@@ -1,5 +1,10 @@
 <ng-container *ngIf="list">
   <div class="container-fluid">
+    <label for="searchKey" class="form-control mt-5">Szűrés jellemzők alapján:</label>
+    <select name="searchKey" id="searchKey" [(ngModel)]="searchKey" class="form-control">
+      <option *ngFor="let key of keys" [value]="key">{{key | uppercase}}</option>
+    </select>
+    <input type="text" class="form-control" [(ngModel)]="searchPhrase">
     <table class="table table-responsive table-striped mt-5">
       <thead>
         <tr>
@@ -18,7 +23,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let list of list">
+        <tr *ngFor="let list of list | filter:searchPhrase:searchKey">
 
           <td *ngFor="let key of keys">
             <input [name]="key" [disabled]="key==='id'" [(ngModel)]="list[key]" type="text" class="form-control">

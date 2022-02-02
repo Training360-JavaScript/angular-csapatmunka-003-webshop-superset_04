@@ -12,6 +12,8 @@ export class DataEditorComponent implements OnInit {
   @Input() list!: Product[];
 
   keys!: string[];
+  searchKey!: string;
+  searchPhrase!: string;
 
   constructor( private productService: ProductService) {}
 
