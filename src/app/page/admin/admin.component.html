@@ -1,4 +1,3 @@
-
-<app-data-editor [list]="list" ></app-data-editor>
-
-
+<div *ngIf="list$ | async as list">
+  <app-data-editor [list]="list"></app-data-editor>
+</div>

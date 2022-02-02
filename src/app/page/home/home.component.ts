@@ -9,17 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  products: Product[];
-  featuredProducts: Product[];
-  randomProducts: Product[];
+  products: Product[] = [];
+  featuredProducts: Product[] = [];
+  randomProducts: Product[] = [];
 
-  constructor(private productService: ProductService) {
-    this.products = this.productService.getAll();
+  constructor(private productService: ProductService) {}
+
+  ngOnInit(): void {
+    this.productService.getAll().subscribe({
+      next: (products) => (this.products = products),
+    });
     this.featuredProducts = this.selectFeaturedProducts(5);
     this.randomProducts = this.selectRandomProducts(5);
   }
-
-  ngOnInit(): void {}
 
   selectFeaturedProducts(n: number): Product[] {
     return this.products.filter((product) => product.featured).slice(0, n);
