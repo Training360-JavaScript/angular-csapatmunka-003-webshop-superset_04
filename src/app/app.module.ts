@@ -20,6 +20,8 @@ import { SorterPipe } from './pipe/sorter.pipe';
 import { FeaturedPipe } from './pipe/featured.pipe';
 import { CardsCarouselComponent } from './common/cards-carousel/cards-carousel.component';
 import { ProductPageComponent } from './page/product-page/product-page.component';
+import { AdminComponent } from './page/admin/admin.component';
+import { DataEditorComponent } from './page/data-editor/data-editor.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { ProductPageComponent } from './page/product-page/product-page.component
     FeaturedPipe,
     CardsCarouselComponent,
     ProductPageComponent,
+    AdminComponent,
+    DataEditorComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

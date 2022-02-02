@@ -1,0 +1,32 @@
+<ng-container *ngIf="list">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Category Id</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Image</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th>Featured</th>
+              <th>Players</th>
+              <th>Playingtime</th>
+              <th>Age</th>
+              <th>Weight</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let list of list">
+            <td>{{ list.id }}</td>
+          </tr>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</ng-container>
