@@ -17,10 +17,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getAll().subscribe({
-      next: (products) => (this.products = products),
+      next: (products) => {
+        this.products = products;
+        this.featuredProducts = this.selectFeaturedProducts(5);
+        this.randomProducts = this.selectRandomProducts(5);
+      },
     });
-    this.featuredProducts = this.selectFeaturedProducts(5);
-    this.randomProducts = this.selectRandomProducts(5);
   }
 
   selectFeaturedProducts(n: number): Product[] {
