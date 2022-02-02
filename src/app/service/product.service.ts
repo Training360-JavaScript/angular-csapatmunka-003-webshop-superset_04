@@ -761,8 +761,8 @@ export class ProductService {
 
   constructor() {}
 
-  getAll(): Product[] {
-    return this.list;
+  getAll(): Observable<Product[]> {
+    return of(this.list);
   }
 
   getProductsByCatID(catID: number): Observable<Product[]> {
