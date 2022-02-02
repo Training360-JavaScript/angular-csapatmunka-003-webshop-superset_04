@@ -8,8 +8,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ProductService {
-
-  jsonName: string = "products";
+  jsonName: string = 'products';
 
   private url: string = `${environment.jsonApiUrl}/${this.jsonName}`;
 
@@ -23,7 +22,7 @@ export class ProductService {
     return this.http.get<Product[]>(`${this.url}?catId=${catId}`);
   }
 
-  getProductById(id: number): Observable<Product> {
-    return this.http.get<Product>(`${this.url}?id=${id}`);
+  getProductById(id: number): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.url}?id=${id}`);
   }
 }
