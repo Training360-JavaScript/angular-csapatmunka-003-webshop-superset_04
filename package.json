@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "ng": "ng",
+    "watch": "start json-server --watch json/products.json && start ng serve",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
