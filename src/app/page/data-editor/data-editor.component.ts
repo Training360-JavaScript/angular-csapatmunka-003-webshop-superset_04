@@ -26,7 +26,9 @@ export class DataEditorComponent implements OnInit {
   deleteItem(product: Product) {
     if(confirm("Biztos, hogy törli a terméket?")) {
 
-      this.productService.remove(product).subscribe()
+      this.productService.remove(product).subscribe(
+        () => this.list.splice(this.list.findIndex(i => i.id === product.id), 1)
+      )
     }
   }
 

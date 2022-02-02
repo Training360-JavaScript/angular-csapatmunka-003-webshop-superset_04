@@ -32,7 +32,7 @@ export class ProductService {
   }
 
   remove(product: any): Observable<any> {
-    product = product.id ? product : product;
+    product = product.id ? product.id : product;
     return this.http.delete( `${environment.jsonApiUrl}/${this.jsonName}/${product}` );
   }
 }
