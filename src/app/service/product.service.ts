@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { of, Observable } from 'rxjs';
 import { Product } from '../model/product';
+import { environment } from '../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -759,29 +761,19 @@ export class ProductService {
     },
   ];
 
-  constructor() {}
+  private url: string = environment.productsApiUrl;
+
+  constructor(private http: HttpClient) {}
 
   getAll(): Observable<Product[]> {
-    return of(this.list);
+    return this.http.get<Product[]>(this.url);
   }
 
-  getProductsByCatID(catID: number): Observable<Product[]> {
-    return of(
-      this.list.filter((product) => {
-        return product.catId === catID;
-      })
-    );
+  getProductsByCatID(catId: number): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.url}?catId=${catId}`);
   }
 
   getProductById(id: number): Observable<Product> {
-    let product = new Product();
-    for (let prod of this.list) {
-      console.log(prod.id, id);
-      if (prod.id === id) {
-        product = prod;
-        break;
-      }
-    }
-    return of(product);
+    return this.http.get<Product>(`${this.url}?id=${id}`);
   }
 }
