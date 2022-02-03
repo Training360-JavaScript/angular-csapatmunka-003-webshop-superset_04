@@ -1,4 +1,6 @@
 {
+  "admins": [{ "id": 1, "email": "admin@email.com" }],
+
   "products": [
     {
       "id": 1,
