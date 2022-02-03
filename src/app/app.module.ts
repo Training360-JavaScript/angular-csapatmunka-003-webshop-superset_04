@@ -23,6 +23,7 @@ import { ProductPageComponent } from './page/product-page/product-page.component
 import { AdminComponent } from './page/admin/admin.component';
 import { DataEditorComponent } from './page/data-editor/data-editor.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StockPipe } from './pipe/stock.pipe';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     ProductPageComponent,
     AdminComponent,
     DataEditorComponent,
+    StockPipe,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
