@@ -1,21 +1,11 @@
 {
-  "admins": [{ "id": 1, "email": "admin@email.com" }],
-
-  "products": [
+  "admins": [
     {
       "id": 1,
-      "catId": 1,
-      "name": "Dune: Imperium",
-      "description": "Befolyás, intrika és harc a Dűne univerzumában. A Dune: Imperium egy többszörösen ihletett játék, ami legfőbb motívumait és karaktereit a Dűne világából meríti, mind a Legendary Pictures által készített új feldolgozásból, mind Frank Herbert, Brian Herbert és Kevin J. Anderson kultikus irodalmi sorozatából. A Landsraad egyik nagy házának vezetőjeként emeled fel zászlód, és gyűjtöd magad köré erőid és kémeid. Háború közeleg, és a konfliktus középpontjában nem más, mint Arrakis - azaz Dűne, a sivatagbolygó áll. A Dune: Imperium egy hagyományos munkáslehelyezős játék egy kis pakliépítős mechanizmussal fűszerezve. Minden játékos egyedi vezetőkártyával indul, és az ellenfeleivel azonos paklival. A kártyák megszerzése és a paklid építése során a választásaid meghatározzák, hogy mik lesznek az erősségeid és a gyengeségeid. A kártyák lehetővé teszik, hogy ügynököket küldhess ki a játéktábla bizonyos területeire, így a paklid felépítése és fejlődése befolyásolja a stratégiát, amit a játék során alkalmazni tudsz. Lehet, hogy katonai szempontból erősebbé válsz, és több csapatot leszel képes bevetni, mint ellenfeleid, vagy olyan kártyákat is megszerezhetsz, amelyek előnyt nyújtanak számodra a játékban képviselt négy politikai frakcióval (a Császár, a Távközlési Céh, a Bene Gesserit és a Fremenek) kapcsolatban. Sok pakliépítő játékkal ellentétben itt nem játszod ki az összes kezedben levő lapot a körödben. Ehelyett minden kör elején húzol bizonyos számú lapot, és más játékosokkal felváltva lesznek az ügynök fordulóid (egy kártyát kijátszva felteheted az egyik ügynököd a játéktáblára). Amikor rád kerül a sor, és nincs már több ügynök, akit elhelyezhetsz a táblán, fel kell fedned a többi kártyádat, amelyek a Persuasion és Swords kategóriába tartozhatnak. A Persuasion lapok több kártya megszerzésére szolgálnak, a Swords lapok pedig segítenek, hogy csapataiddal megszerezhesd az aktuális kör jutalmait, amiket az érvényben levő Konfliktus kártya határoz meg. Győzd le a riválisaid harcban, lavírozz ravaszul a politikai frakciók között és szerezz értékes The Spice Must Flow kártyákat, hogy győzelemre vezesd a házadat!",
-      "image": "/assets/image/products/316554.jpg",
-      "price": 17990,
-      "stock": true,
-      "featured": false,
-      "players": "1-4",
-      "playingtime": "1-2 óra",
-      "age": "14+",
-      "weight": "közepesen összetett"
-    },
+      "email": "admin@email.com"
+    }
+  ],
+  "products": [
     {
       "id": 2,
       "catId": 1,

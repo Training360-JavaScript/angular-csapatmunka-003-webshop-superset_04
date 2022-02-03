@@ -27,11 +27,11 @@ export class ProductService {
   }
 
   update(product: Product): Observable<any> {
-    return this.http.put( `${this.url}/${product.id}`, product )
+    return this.http.put(`${this.url}/${product.id}`, product);
   }
 
   remove(product: any): Observable<any> {
-    product = product.id ? product : product;
-    return this.http.delete( `${this.url}/${product}` );
+    product = product.id ? product.id : product;
+    return this.http.delete(`${this.url}/${product}`);
   }
 }
