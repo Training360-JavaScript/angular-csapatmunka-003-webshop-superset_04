@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+      <form
+        #loginForm="ngForm"
+        class="bg-white p-3 rounded mt-5"
+        (ngSubmit)="login(loginForm)"
+      >
+        <h2 class="text-center h5 mb-3">Admin bejelentkezés</h2>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            required
+            email
+            ngModel
+            name="email"
+            #email="ngModel"
+            type="email"
+            class="form-control"
+            id="email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Jelszó</label>
+          <input
+            required
+            ngModel
+            name="password"
+            #password="ngModel"
+            type="password"
+            class="form-control"
+            id="password"
+          />
+        </div>
+
+        <div *ngIf="loginFailed" class="alert alert-danger">
+          A megadott e-mail-cím vagy jelszó nem megfelelő.
+        </div>
+
+        <button
+          [disabled]="loginForm.invalid"
+          class="btn btn-block btn-primary"
+        >
+          Bejelentkezés
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

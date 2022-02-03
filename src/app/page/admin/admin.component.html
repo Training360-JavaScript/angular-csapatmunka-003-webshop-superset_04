@@ -1,9 +1,13 @@
-<div *ngIf="list$ | async as list">
+<app-login-form
+  *ngIf="!isLoggedIn"
+  (onSubmit)="onSubmit($event)"
+></app-login-form>
+
+<div *ngIf="isLoggedIn && (list$ | async) as list">
+  <div class="text-center pt-5">
+    <button class="btn btn-secondary d-inline" (click)="logout()">
+      Kijelentkezés
+    </button>
+  </div>
   <app-data-editor [list]="list"></app-data-editor>
-
-
-<td *ngFor="let key of keys">
-  <input [name]="key" [disabled]="key==='id'" [(ngModel)]="list[key]" type="text" class="form-control">
-</td>
-
 </div>
