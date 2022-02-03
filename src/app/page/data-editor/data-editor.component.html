@@ -1,11 +1,24 @@
 <ng-container *ngIf="list">
   <div class="container-fluid">
-    <label for="searchKey" class="form-control mt-5">Szűrés jellemzők alapján:</label>
-    <select name="searchKey" id="searchKey" [(ngModel)]="searchKey" class="form-control">
-      <option *ngFor="let key of keys" [value]="key">{{key | uppercase}}</option>
-    </select>
-    <input type="text" class="form-control" [(ngModel)]="searchPhrase">
-    <table class="table table-responsive table-striped mt-5">
+    <div class="form-group d-flex justify-content-between">
+      <div class="form-group">
+        <label for="searchKey" class="form-control mt-5">Szűrés jellemzők alapján:</label>
+        <select name="searchKey" id="searchKey" [(ngModel)]="searchKey" class="form-control">
+          <option *ngFor="let key of keys" [value]="key">{{key | uppercase}}</option>
+        </select>
+        <input type="text" class="form-control mt-1" [(ngModel)]="searchPhrase">
+      </div>
+      <div class="form-group">
+        <label for="sortKey" class="form-control mt-5">Rendezés jellemzők alapján:</label>
+        <select name="sortKey" id="sortKey" [(ngModel)]="sortKey" class="form-control">
+          <option *ngFor="let key of keys" [value]="key">{{key | uppercase}}</option>
+        </select>
+      </div>
+    </div>
+<div class="row">
+
+
+    <table class="table table-responsive table-striped mt-3">
       <thead>
         <tr>
           <th>Id</th>
@@ -23,7 +36,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let list of list | filter:searchPhrase:searchKey">
+        <tr *ngFor="let list of list | filter:searchPhrase:searchKey | sorter:sortKey">
 
           <td *ngFor="let key of keys">
             <input [name]="key" [disabled]="key==='id'" [(ngModel)]="list[key]" type="text" class="form-control">
@@ -40,5 +53,6 @@
         </tr>
       </tbody>
     </table>
+  </div>
   </div>
 </ng-container>
