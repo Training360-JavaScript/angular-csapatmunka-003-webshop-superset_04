@@ -1,20 +1,49 @@
 <div class="container py-5">
   <div *ngFor="let product of product$ | async" class="card mb-3">
-    <p>{{ product.id }}</p>
     <div class="card-body">
       <div class="row">
         <div class="col-12 col-md-6">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">
+          <div class="mb-3 d-flex justify-content-between align-items-center">
+            <h5 class="card-title flex-fill">{{ product.name }}</h5>
+            <button class="card-product__btn w-auto">
+              <i class="fa fa-cart-plus"></i>
+            </button>
+          </div>
+          <h6 class="card-subtitle mb-3 text-muted">
             {{ product.description }}
           </h6>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              {{ product.price | currency: "HUF" }}
+            <li class="list-group-item px-0 d-flex">
+              <span>Termék ára:</span>
+              <strong class="ml-auto">{{
+                product.price | currency: "HUF"
+              }}</strong>
             </li>
-            <li class="list-group-item">{{ product.playingtime }}</li>
-            <li class="list-group-item">{{ product.age }}</li>
-            <li class="list-group-item">{{ product.players }}</li>
+            <li class="list-group-item px-0 d-flex">
+              <span>Raktáron:</span>
+              <strong
+                class="ml-auto"
+                [innerHTML]="product.stock | stock"
+              ></strong>
+            </li>
+            <li class="list-group-item px-0 d-flex">
+              <span>Játékidő:</span>
+              <strong class="ml-auto">
+                {{ product.playingtime }}
+              </strong>
+            </li>
+            <li class="list-group-item px-0 d-flex">
+              <span>Életkor:</span>
+              <strong class="ml-auto">
+                {{ product.age }}
+              </strong>
+            </li>
+            <li class="list-group-item px-0 d-flex">
+              <span>Játékosok száma:</span>
+              <strong class="ml-auto">
+                {{ product.players }}
+              </strong>
+            </li>
           </ul>
         </div>
         <div class="col-12 col-md-6">
